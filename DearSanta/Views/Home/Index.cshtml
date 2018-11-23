@@ -1,0 +1,19 @@
+﻿@model DearSanta.ViewModels.HomeViewModel
+
+<h2>@Model.Title</h2>
+
+@foreach (var gift in Model.Gifts)
+{
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <img src="@gift.ThumbnailUrl" alt="">
+        <div class="caption">
+            <h3 class="pull-right">@gift.Price.ToString("c")</h3>
+            <h3>
+                @gift.Name
+            </h3>
+            <p>@gift.ShortDesc</p>
+        </div>
+    </div>
+</div>
+}
