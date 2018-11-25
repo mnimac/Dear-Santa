@@ -19,9 +19,7 @@ namespace DearSanta.Elfs
         }
 
         public IActionResult Index()
-        {
-            
-
+        {           
             var gifts = _giftRepository.GetAllGifts();
 
             var homeViewModel = new HomeViewModel()
@@ -31,6 +29,16 @@ namespace DearSanta.Elfs
             };
 
             return View(homeViewModel);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var gift = _giftRepository.GetGiftById(id);
+            if (gift == null)
+                return NotFound();
+            
+
+            return View(gift);
         }
     }
 }
