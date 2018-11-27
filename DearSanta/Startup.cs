@@ -29,6 +29,7 @@ namespace DearSanta
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<IGiftRepository, GiftRepository>();
+            services.AddTransient<IWishRepository, WishRepository>();
             services.AddMvc();
         }
 

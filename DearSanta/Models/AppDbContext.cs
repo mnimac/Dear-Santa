@@ -13,5 +13,6 @@ namespace DearSanta.Models
         }
 
         public DbSet<Gift> Gifts { get; set; }
+        public DbSet<Wish> Wishes { get; set; }
     }
 }
