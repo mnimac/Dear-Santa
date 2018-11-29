@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DearSanta.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace DearSanta.Elfs
 {
+    [Authorize]
     public class WishController : Controller
-    {
+    {        
         private readonly IWishRepository _wishRepository;
 
         public WishController(IWishRepository wishRepository)
