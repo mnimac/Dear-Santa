@@ -30,7 +30,7 @@ namespace DearSanta
                 }
                 catch (Exception)
                 {
-                    //real wordl 
+                    //real world 
                 }
             }
 
