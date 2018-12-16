@@ -1,11 +1,53 @@
-﻿body {
+﻿
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url('/images/winter-background.png');
-    background-repeat: repeat;
+    background: white !important;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #d42426;
+    text-align: center;
 }
 
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.spacing {
+    word-spacing: normal;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.picture {
+    height: 100%;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-inverse {
+    background-color: #d42426;
+    border-color: #d42426;
+}
+
+a {
+    color: #39a233;
 }

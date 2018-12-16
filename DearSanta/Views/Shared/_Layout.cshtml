@@ -7,8 +7,14 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/content/site.css"/>
-    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/content/site.css" />
+    <meta name="description" content="Santa's shop">
+    <meta name="author" content="Marko Nimac">
+
+    <link rel="icon" type="image/jpg" href="~/images/santa-claus.png">
+
+    <title>DearSanta</title>
+
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -44,5 +50,10 @@
     <div class="container body-content">
         @RenderBody()
     </div>
+
+    <footer>
+            <p>Copyright &copy; Marko Nimac</p>
+    </footer>
+
 </body>
 </html>
