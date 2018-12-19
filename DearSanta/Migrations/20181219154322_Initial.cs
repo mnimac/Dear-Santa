@@ -5,39 +5,10 @@ using System.Collections.Generic;
 
 namespace DearSanta.Migrations
 {
-    public partial class IdentityAdded : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<string>(
-                name: "Name",
-                table: "Wishes",
-                maxLength: 100,
-                nullable: false,
-                oldClrType: typeof(string),
-                oldNullable: true);
-
-            migrationBuilder.AlterColumn<string>(
-                name: "Message",
-                table: "Wishes",
-                maxLength: 5000,
-                nullable: false,
-                oldClrType: typeof(int));
-
-            migrationBuilder.AlterColumn<bool>(
-                name: "GoodBoy",
-                table: "Wishes",
-                nullable: false,
-                oldClrType: typeof(int));
-
-            migrationBuilder.AlterColumn<string>(
-                name: "Email",
-                table: "Wishes",
-                maxLength: 100,
-                nullable: false,
-                oldClrType: typeof(string),
-                oldNullable: true);
-
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -75,6 +46,40 @@ namespace DearSanta.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Gifts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ImageUrl = table.Column<string>(nullable: true),
+                    LongDesc = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Price = table.Column<double>(nullable: false),
+                    ShortDesc = table.Column<string>(nullable: true),
+                    ThumbnailUrl = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Gifts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Wishes",
+                columns: table => new
+                {
+                    WishId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Email = table.Column<string>(maxLength: 100, nullable: false),
+                    GoodBoy = table.Column<bool>(nullable: false),
+                    Message = table.Column<string>(maxLength: 5000, nullable: false),
+                    Name = table.Column<string>(maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Wishes", x => x.WishId);
                 });
 
             migrationBuilder.CreateTable(
@@ -241,37 +246,16 @@ namespace DearSanta.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Gifts");
+
+            migrationBuilder.DropTable(
+                name: "Wishes");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.AlterColumn<string>(
-                name: "Name",
-                table: "Wishes",
-                nullable: true,
-                oldClrType: typeof(string),
-                oldMaxLength: 100);
-
-            migrationBuilder.AlterColumn<int>(
-                name: "Message",
-                table: "Wishes",
-                nullable: false,
-                oldClrType: typeof(string),
-                oldMaxLength: 5000);
-
-            migrationBuilder.AlterColumn<int>(
-                name: "GoodBoy",
-                table: "Wishes",
-                nullable: false,
-                oldClrType: typeof(bool));
-
-            migrationBuilder.AlterColumn<string>(
-                name: "Email",
-                table: "Wishes",
-                nullable: true,
-                oldClrType: typeof(string),
-                oldMaxLength: 100);
         }
     }
 }

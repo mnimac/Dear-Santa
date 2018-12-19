@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DearSanta.Migrations
 {
-    public partial class test : Migration
+    public partial class GiftsAdded : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

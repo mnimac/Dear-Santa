@@ -11,8 +11,8 @@ using System;
 namespace DearSanta.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20181128130548_IdentityAdded")]
-    partial class IdentityAdded
+    [Migration("20181219154322_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,8 +27,6 @@ namespace DearSanta.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("ImageUrl");
-
-                    b.Property<bool>("IsInStock");
 
                     b.Property<string>("LongDesc");
 
