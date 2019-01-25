@@ -11,8 +11,8 @@ using System;
 namespace DearSanta.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20181219154322_Initial")]
-    partial class Initial
+    [Migration("20190124230645_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

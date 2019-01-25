@@ -11,9 +11,15 @@
             <h3 class="pull-right">@gift.Price.ToString("c")</h3>
             <h3>
                 <a asp-controller="Home" asp-action="Details"
-                    asp-route-id="@gift.Id">@gift.Name</a>
+                   asp-route-id="@gift.Id">@gift.Name</a>
             </h3>
             <p>@gift.ShortDesc</p>
+            <div class="addToCart">
+                <p class="button">
+                    <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+                       asp-route-giftId="@Model.Gifts">Add to cart</a>
+                </p>
+            </div>
         </div>
     </div>
 </div>

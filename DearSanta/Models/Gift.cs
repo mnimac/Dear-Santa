@@ -16,6 +16,11 @@ namespace DearSanta.Models
         public string LongDesc { get; set; }
         public string ImageUrl { get; set; }
         public string ThumbnailUrl { get; set; }
+
+        internal object FirstOrDefault(Func<object, bool> p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
  

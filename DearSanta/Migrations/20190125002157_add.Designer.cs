@@ -11,8 +11,8 @@ using System;
 namespace DearSanta.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20181219154439_GiftsAdded")]
-    partial class GiftsAdded
+    [Migration("20190125002157_add")]
+    partial class add
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,6 +41,24 @@ namespace DearSanta.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Gifts");
+                });
+
+            modelBuilder.Entity("DearSanta.Models.ShoppingCartItem", b =>
+                {
+                    b.Property<int>("ShoppingCartItemId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Amount");
+
+                    b.Property<int?>("GiftId");
+
+                    b.Property<string>("ShoppingCartId");
+
+                    b.HasKey("ShoppingCartItemId");
+
+                    b.HasIndex("GiftId");
+
+                    b.ToTable("ShoppingCartItems");
                 });
 
             modelBuilder.Entity("DearSanta.Models.Wish", b =>
@@ -224,6 +242,13 @@ namespace DearSanta.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("DearSanta.Models.ShoppingCartItem", b =>
+                {
+                    b.HasOne("DearSanta.Models.Gift", "Gift")
+                        .WithMany()
+                        .HasForeignKey("GiftId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
