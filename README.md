@@ -1,7 +1,7 @@
 # Dear Santa
 
 Dear Santa is an Asp.net core mvc application built as a web shop.
-## Features
+## Uses
   -Entity Framework Core </br>
   -Bootstrap
   
