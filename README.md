@@ -11,3 +11,5 @@ Dear Santa is an Asp.net core mvc application built as a web shop.
   -Gifts detail page  </br>
   -Make a wish page </br>
   -Ability to login or register </br>
+  
+![](Images/Untitled.png)
